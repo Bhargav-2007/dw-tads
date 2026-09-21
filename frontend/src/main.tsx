@@ -8,12 +8,14 @@ import { useAuthStore } from "./stores/authStore";
 import "./styles/fonts.css";
 import "./styles/tokens.css";
 import "./styles/globals.css";
+
 useAuthStore.getState().initialize();
+
 ReactDOM.createRoot(document.getElementById("root")!).render(
   <React.StrictMode>
     <ErrorBoundary>
       <MotionConfig reducedMotion="user">
-        <BrowserRouter>
+        <BrowserRouter basename={import.meta.env.BASE_URL}>
           <App />
         </BrowserRouter>
       </MotionConfig>

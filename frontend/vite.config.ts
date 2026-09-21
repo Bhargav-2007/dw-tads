@@ -1,9 +1,12 @@
 import { defineConfig } from "vite";
 import react from "@vitejs/plugin-react";
+
 export default defineConfig({
+  base: process.env.BASE_URL ?? (process.env.NODE_ENV === "production" ? "/dw-tads/" : "/"),
   plugins: [react()],
   server: {
-    port: 5173, watch: {usePolling: process.env.CHOKIDAR_USEPOLLING === "true", interval: 500},
+    port: 5173,
+    watch: { usePolling: process.env.CHOKIDAR_USEPOLLING === "true", interval: 500 },
     strictPort: true,
     proxy: {
       "/api": {

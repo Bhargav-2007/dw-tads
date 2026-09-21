@@ -1,11 +1,21 @@
 import { useState } from "react";
 import { Navigate } from "react-router-dom";
 import { motion } from "framer-motion";
-import { Shield, Eye, EyeOff, ArrowRight, LockKeyhole } from "lucide-react";
+import {
+  Shield,
+  Eye,
+  EyeOff,
+  ArrowRight,
+  LockKeyhole,
+  Sparkles,
+  UserCheck,
+  ShieldCheck,
+} from "lucide-react";
 import { Button, Input } from "../components/ui";
 import { useAuthStore } from "../stores/authStore";
 import { errorMessage } from "../lib/api";
 import { useReducedMotion } from "../hooks/useReducedMotion";
+
 export default function Login() {
   const { token, login } = useAuthStore();
   const [username, setUsername] = useState("");
@@ -16,7 +26,27 @@ export default function Login() {
   const [error, setError] = useState("");
   const [attempt, setAttempt] = useState(0);
   const reduced = useReducedMotion();
+
+  const launchDemo = async (role: "analyst" | "admin") => {
+    sessionStorage.setItem("dwtds_demo_mode", "true");
+    const user = role === "admin" ? "admin1" : "analyst1";
+    setUsername(user);
+    setPassword("demo_password");
+    setTotp("123456");
+    setPending(true);
+    setError("");
+    try {
+      await login(user, "demo_password", "123456");
+    } catch (err) {
+      setError(errorMessage(err));
+      setAttempt((a) => a + 1);
+    } finally {
+      setPending(false);
+    }
+  };
+
   if (token) return <Navigate to="/timeline" replace />;
+
   return (
     <div className="login-page" role="main">
       <div className="login-context">
@@ -51,8 +81,9 @@ export default function Login() {
           <Shield size={42} />
         </div>
         <h1>DW-TADS</h1>
-        <p className="login-subtitle">Analyst Access</p>
+        <p className="login-subtitle">Dark Web Threat Actor Detection</p>
         <div className="login-rule" />
+
         <Input
           label="Username"
           autoComplete="username"
@@ -95,6 +126,7 @@ export default function Login() {
         <p className="muted text-xs">
           Enter the 6-digit code from your authenticator.
         </p>
+
         <Button
           type="submit"
           variant="primary"
@@ -105,15 +137,44 @@ export default function Login() {
           Sign in
           <ArrowRight size={17} />
         </Button>
+
         <div className="login-error" role="alert">
           {error}
         </div>
-        {import.meta.env.VITE_DEMO_MODE === "true" && (
-          <p className="muted">
-            Generate the current TOTP with your demo account’s provisioned
-            authenticator. No demo secret is bundled in this app.
+
+        <div className="demo-showcase-panel">
+          <div className="demo-badge">
+            <Sparkles size={14} />
+            <span>Interactive Showcase</span>
+          </div>
+          <p className="demo-desc">
+            Explore live threat actor discovery, timeline investigation,
+            graph intelligence, and audit trails.
           </p>
-        )}
+          <div className="demo-buttons">
+            <Button
+              type="button"
+              variant="secondary"
+              className="demo-btn"
+              onClick={() => launchDemo("analyst")}
+              disabled={pending}
+            >
+              <UserCheck size={14} />
+              Analyst Demo
+            </Button>
+            <Button
+              type="button"
+              variant="secondary"
+              className="demo-btn"
+              onClick={() => launchDemo("admin")}
+              disabled={pending}
+            >
+              <ShieldCheck size={14} />
+              Admin Demo
+            </Button>
+          </div>
+        </div>
+
         <div className="login-foot">
           <LockKeyhole size={14} />
           Authorized personnel only
