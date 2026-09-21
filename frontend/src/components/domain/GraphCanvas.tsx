@@ -140,6 +140,14 @@ export function GraphCanvas({
       wheelSensitivity: 0.25,
     });
     instance.current = cy;
+    const readableZoom = () => {
+      if (cy.zoom() > 1) {
+        cy.zoom(1);
+        cy.center();
+      }
+    };
+    cy.on("layoutstop", readableZoom);
+    readableZoom();
     cy.on("tap", "node", (e) =>
       select.current?.(e.target.id(), e.target.data("type")),
     );

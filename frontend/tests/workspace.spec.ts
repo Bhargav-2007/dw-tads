@@ -144,6 +144,8 @@ async function fixtures(page: Page, role = "admin") {
 }
 async function login(page: Page) {
   await page.goto("/login");
+  await expect(page.locator(".login-card")).toHaveCSS("opacity", "1");
+  await page.evaluate(() => document.fonts.ready);
   await page.getByLabel("Username", { exact: true }).fill("test-analyst");
   await page.getByLabel("Password", { exact: true }).fill("test-password");
   await page.getByLabel("Authenticator code").fill("123456");
@@ -232,7 +234,11 @@ test("login, investigation, exports and keyboard workflows", async ({
   await expect(
     page.getByRole("row", { name: `Open actor ${actor.actor_id}` }),
   ).toHaveCSS("opacity", "1");
-  await page.screenshot({ path: "artifacts/timeline.png", fullPage: true });
+  await page.screenshot({
+    path: "artifacts/timeline.png",
+    fullPage: true,
+    animations: "disabled",
+  });
 });
 test("role protection and unauthorized session clearing", async ({ page }) => {
   await fixtures(page, "analyst");
@@ -264,7 +270,12 @@ test("accessible pages, responsive layout and reduced motion", async ({
 }) => {
   await fixtures(page);
   await page.goto("/login");
-  await page.screenshot({ path: "artifacts/login.png" });
+  await expect(page.locator(".login-card")).toHaveCSS("opacity", "1");
+  await page.evaluate(() => document.fonts.ready);
+  await page.screenshot({
+    path: "artifacts/login.png",
+    animations: "disabled",
+  });
   let checks = await new AxeBuilder({ page })
     .withTags(["wcag2a", "wcag2aa", "wcag21aa"])
     .analyze();
@@ -286,6 +297,7 @@ test("accessible pages, responsive layout and reduced motion", async ({
     await page.screenshot({
       path: `artifacts/${path.split("?")[0].split("/")[1]}.png`,
       fullPage: true,
+      animations: "disabled",
     });
   }
   await page.setViewportSize({ width: 1280, height: 900 });

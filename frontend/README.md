@@ -4,7 +4,7 @@ React 18, strict TypeScript, Vite, Tailwind CSS v3, Framer Motion, Cytoscape.js 
 
 ## Setup and development
 
-Use Node.js 20.19+ or 22.12+ and npm. From this directory:
+Use Node.js 22.19+ and npm for the complete development and Lighthouse toolchain. The production build also runs on Node.js 20.19+ (as in the required Docker build). From this directory:
 
 ```sh
 npm ci
@@ -69,3 +69,24 @@ Tab controls support arrow keys, Home and End. Modals trap and restore focus. Gr
 ## Validation
 
 See `VERIFICATION.md` for actual build, test and integration results. Automated API fixtures, if used for browser checks, are test-only and are not shipped in the app. Never treat fixture validation as verification of the production backend.
+## Workspace runtime
+
+This Windows/WSL workspace is served by a project-local native Node 20.19 runtime in `../.tools/`, because accessing the Linux source through Windows Node caused slow I/O and file-watch errors. The runtime is a generated local tool, not application source. The running development server reads this `frontend/` directory directly.
+
+To restart in WSL using that runtime:
+
+```sh
+cd /home/bhargav/projects/dw-tads/frontend
+export PATH="/home/bhargav/projects/dw-tads/.tools/node-v20.19.0-linux-x64/bin:$PATH"
+npm run dev
+```
+
+Prefer a normally installed Node 22.19+ for future development. Run `npm ci` inside WSL, not through the Windows UNC path. If Windows Node must be used, set `CHOKIDAR_USEPOLLING=true`; native WSL is significantly faster.
+
+Run browser checks against a started dev server with `npm run test:e2e`. The suite uses installed Chrome by default; set `CHROME_PATH` for another Chromium executable. Test fixtures live only in `tests/` and are never included in the production bundle.
+
+## Dependency review
+
+The final recorded audit has no high or critical advisories. React Router 6.30.6 retains two moderate findings (the direct and transitive package reports); changing to v7 would violate the mandatory v6 requirement. Application navigation uses fixed internal routes and URI-encoded actor IDs; external evidence links are restricted to HTTP(S), and the app does not use SSR hydration. These controls reduce relevant exposure but do not remove the dependency advisories.
+
+The development-only Vitest 3.2.7 / mocker pair retains two moderate advisories for its browser/mock server. This project runs Vitest in one-shot Node mode (`vitest run`), without exposing that server. Review these remaining findings before certifying a deployment; the exact audit is in `artifacts/final-audit.json`.

@@ -18,7 +18,7 @@ export default function Login() {
   const reduced = useReducedMotion();
   if (token) return <Navigate to="/timeline" replace />;
   return (
-    <div className="login-page">
+    <div className="login-page" role="main">
       <div className="login-context">
         <Shield size={24} />
         <span>DW-TADS / SECURE ANALYST ACCESS</span>

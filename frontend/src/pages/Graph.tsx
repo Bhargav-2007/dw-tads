@@ -36,6 +36,13 @@ export default function Graph() {
     null,
   );
   const cy = useRef<Core>();
+  const fit = () => {
+    const graph = cy.current;
+    if (!graph) return;
+    graph.fit(undefined, 60);
+    if (graph.zoom() > 1) graph.zoom(1);
+    graph.center();
+  };
   useEffect(() => {
     const id = params.get("actor_id");
     if (id) {
@@ -192,10 +199,7 @@ export default function Graph() {
           >
             <ZoomOut size={17} />
           </Button>
-          <Button
-            aria-label="Fit graph"
-            onClick={() => cy.current?.fit(undefined, 60)}
-          >
+          <Button aria-label="Fit graph" onClick={fit}>
             <Maximize size={17} />
           </Button>
           <Button
@@ -203,7 +207,7 @@ export default function Graph() {
             onClick={() => {
               setLayout("force");
               store.configure({ filters: { nodeTypes: [], tier: "All" } });
-              cy.current?.fit();
+              fit();
             }}
           >
             <RotateCcw size={17} />

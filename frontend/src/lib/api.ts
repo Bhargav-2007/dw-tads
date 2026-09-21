@@ -2,6 +2,15 @@ import axios, { AxiosError } from "axios";
 import { useToastStore } from "../stores/toastStore";
 import type { ApiError } from "../types/api";
 export let correlationId = "";
+function requestErrorMessage(status: number | undefined, serverMessage?: string) {
+  if (status === 403) return "Insufficient permissions";
+  if (status === 429) return "Too many requests";
+  if (serverMessage) return serverMessage;
+  if (!status || status >= 500) return "The analyst API is unavailable. Sign-in requires the backend service on port 8010.";
+  if (status === 404) return "The analyst API endpoint was not found. Check the backend configuration.";
+  if (status === 401) return "Sign-in was rejected or your session has expired.";
+  return "The request could not be completed";
+}
 export const api = axios.create({
   baseURL: import.meta.env.VITE_API_BASE_URL || "/api",
   timeout: 30000,
@@ -31,15 +40,7 @@ api.interceptors.response.use(
         ? Date.now() + seconds * 1000
         : Date.parse(raw)
       : undefined;
-    const message =
-      status === 403
-        ? "Insufficient permissions"
-        : status === 429
-          ? "Too many requests"
-          : error.response?.data?.error ||
-            (!error.response
-              ? "Unable to connect to the analyst API"
-              : "The request could not be completed");
+    const message = requestErrorMessage(status, error.response?.data?.error);
     if (status === 401) {
       sessionStorage.removeItem("dwtds_token");
       sessionStorage.removeItem("dwtds_expires");
@@ -62,7 +63,7 @@ api.interceptors.response.use(
 );
 export const errorMessage = (e: unknown) =>
   axios.isAxiosError(e)
-    ? e.response?.data?.error || e.message
+    ? requestErrorMessage(e.response?.status, e.response?.data?.error)
     : e instanceof Error
       ? e.message
       : "Unexpected error";

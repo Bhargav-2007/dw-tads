@@ -7,7 +7,9 @@
     "dev": "vite --host 0.0.0.0 --port 5173 --strictPort",
     "build": "tsc -b && vite build",
     "preview": "vite preview --host 0.0.0.0",
-    "test": "vitest run"
+    "test": "vitest run",
+    "test:e2e": "playwright test",
+    "format": "prettier --write src tests *.ts *.json *.cjs index.html"
   },
   "dependencies": {
     "axios": "1.20.0",
