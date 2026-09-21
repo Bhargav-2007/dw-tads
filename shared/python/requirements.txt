@@ -1,0 +1,57 @@
+# Shared library requirements for dwtds_common and all plane services
+# All versions pinned exactly.
+
+# HTTP
+httpx==0.27.2
+anyio==4.7.0
+
+# Kafka
+aiokafka==0.11.0
+
+# Postgres
+asyncpg==0.30.0
+
+# Neo4j
+neo4j==5.27.0
+
+# MinIO
+minio==7.2.13
+
+# Validation
+pydantic==2.10.4
+
+# Logging
+structlog==24.4.0
+
+# Web framework (used by plane runners)
+fastapi==0.115.6
+uvicorn==0.34.0
+
+# Prometheus metrics
+prometheus-client==0.21.1
+
+# NLP / ML (Tier A services)
+numpy==1.26.4
+sentence-transformers==3.0.1
+transformers==4.44.2
+torch==2.4.1
+
+# PDF generation (report-generator)
+reportlab==4.2.5
+
+# HTML parsing (onion-discovery, ahmia-crawler)
+selectolax==0.3.21
+
+# JWT / auth (analyst-api)
+pyjwt==2.9.0
+argon2-cffi==23.1.0
+pyotp==2.9.0
+
+# STEM / Tor (tor-proxy-manager)
+stem==1.8.2
+
+# SQLite (vasp-attributor, clearnet-correlator)
+# stdlib — no pin needed
+
+# Security
+cryptography==43.0.3

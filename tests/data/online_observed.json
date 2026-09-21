@@ -1,0 +1,49 @@
+{
+  "mode": "public-technical-intelligence",
+  "sources": [
+    {
+      "name": "cisa-kev",
+      "url": "https://raw.githubusercontent.com/cisagov/kev-data/develop/known_exploited_vulnerabilities.json",
+      "last_attempt": "2026-09-20T14:09:20.268840+00:00",
+      "last_success": "2026-09-20T14:09:20.858087+00:00",
+      "error": null,
+      "last_sha": "7b770a6f5eb1d47a7176ef2f1428594551399912c8f3b5d2bf0f562b7e745e06"
+    },
+    {
+      "name": "mitre-attack",
+      "url": "https://raw.githubusercontent.com/mitre-attack/attack-stix-data/master/enterprise-attack/enterprise-attack.json",
+      "last_attempt": "2026-09-20T14:09:20.872131+00:00",
+      "last_success": "2026-09-20T14:09:23.627451+00:00",
+      "error": null,
+      "last_sha": "dc1639caa5501d720e280cf1cbd8fbe009884a0c9b3e6e9ed9d0c25166c3d8f4"
+    }
+  ],
+  "records": [
+    {
+      "kind": "malware",
+      "count": 730
+    },
+    {
+      "kind": "technique",
+      "count": 697
+    },
+    {
+      "kind": "vulnerability",
+      "count": 1716
+    }
+  ],
+  "pending_snapshots": 0,
+  "relationships": 10493,
+  "record_versions": 3143,
+  "merkle_anchors": 2,
+  "schema_migrations": [
+    {
+      "version": "001_history_and_integrity.sql",
+      "sha256": "4f5383ca1490f13eb2e49fd4243bbde296ddcb5fc21cf1bd121ffe4d72b1210d",
+      "applied_at": "2026-09-20T14:05:18.269581+00:00"
+    }
+  ],
+  "object_versioning": "Enabled",
+  "audit_chain_valid": true,
+  "refresh_interval_seconds": 21600
+}

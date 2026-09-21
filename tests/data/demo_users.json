@@ -1,0 +1,9 @@
+{
+  "users": [
+    {"username": "analyst1", "password": "demo_password", "mfa_secret": "JBSWY3DPEHPK3PXP", "role": "analyst"},
+    {"username": "senior1",  "password": "demo_password", "mfa_secret": "KRSXGZDFNQQGK3DF", "role": "senior_analyst"},
+    {"username": "admin1",   "password": "demo_password", "mfa_secret": "MFRGGZDFMZTWQ2LK", "role": "admin"},
+    {"username": "judge1",   "password": "demo_password", "mfa_secret": "GEZDGNBVGY3TQOJQ", "role": "auditor"}
+  ],
+  "note": "Demo users. MFA secrets are base32. Passwords hashed with Argon2."
+}

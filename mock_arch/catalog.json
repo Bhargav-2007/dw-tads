@@ -1,0 +1,704 @@
+[
+  {
+    "id": "docker-swarm",
+    "plane": 1,
+    "plane_name": "### Plane 1 \u2014 Infrastructure and Security",
+    "tier": 1,
+    "purpose": "12-node orchestration (8 compute + 2 GPU + 2 HA)",
+    "implementation": "mock-only",
+    "operational": false
+  },
+  {
+    "id": "internal-ca",
+    "plane": 1,
+    "plane_name": "### Plane 1 \u2014 Infrastructure and Security",
+    "tier": 1,
+    "purpose": "Vault + CFSSL mTLS issuance, 90-day rotation",
+    "implementation": "mock-only",
+    "operational": false
+  },
+  {
+    "id": "secrets-manager",
+    "plane": 1,
+    "plane_name": "### Plane 1 \u2014 Infrastructure and Security",
+    "tier": 1,
+    "purpose": "Vault HSM-sealed, offline mode",
+    "implementation": "mock-only",
+    "operational": false
+  },
+  {
+    "id": "audit-ledger",
+    "plane": 1,
+    "plane_name": "### Plane 1 \u2014 Infrastructure and Security",
+    "tier": 3,
+    "purpose": "Merkle tree, append-only Postgres",
+    "implementation": "mock-only",
+    "operational": false
+  },
+  {
+    "id": "data-diode",
+    "plane": 1,
+    "plane_name": "### Plane 1 \u2014 Infrastructure and Security",
+    "tier": 1,
+    "purpose": "Hardware one-way ingest",
+    "implementation": "mock-only",
+    "operational": false
+  },
+  {
+    "id": "calico-policies",
+    "plane": 1,
+    "plane_name": "### Plane 1 \u2014 Infrastructure and Security",
+    "tier": 1,
+    "purpose": "Micro-segmentation enforcement",
+    "implementation": "mock-only",
+    "operational": false
+  },
+  {
+    "id": "pqc-layer",
+    "plane": 1,
+    "plane_name": "### Plane 1 \u2014 Infrastructure and Security",
+    "tier": 4,
+    "purpose": "CRYSTALS-Kyber for evidence + audit",
+    "implementation": "mock-only",
+    "operational": false
+  },
+  {
+    "id": "key-fragmentation",
+    "plane": 1,
+    "plane_name": "### Plane 1 \u2014 Infrastructure and Security",
+    "tier": 4,
+    "purpose": "N-of-M key shares across Tor circuits",
+    "implementation": "mock-only",
+    "operational": false
+  },
+  {
+    "id": "chaos-engineering",
+    "plane": 1,
+    "plane_name": "### Plane 1 \u2014 Infrastructure and Security",
+    "tier": 3,
+    "purpose": "Internal fault injection, game days",
+    "implementation": "mock-only",
+    "operational": false
+  },
+  {
+    "id": "cost-governance",
+    "plane": 1,
+    "plane_name": "### Plane 1 \u2014 Infrastructure and Security",
+    "tier": 2,
+    "purpose": "Per-case cost attribution",
+    "implementation": "mock-only",
+    "operational": false
+  },
+  {
+    "id": "threat-model-engine",
+    "plane": 1,
+    "plane_name": "### Plane 1 \u2014 Infrastructure and Security",
+    "tier": 2,
+    "purpose": "STRIDE / LINDDUN analysis registry",
+    "implementation": "mock-only",
+    "operational": false
+  },
+  {
+    "id": "sbom-signer",
+    "plane": 1,
+    "plane_name": "### Plane 1 \u2014 Infrastructure and Security",
+    "tier": 3,
+    "purpose": "Software Bill of Materials per image",
+    "implementation": "mock-only",
+    "operational": false
+  },
+  {
+    "id": "tor-proxy-manager",
+    "plane": 2,
+    "plane_name": "### Plane 2 \u2014 Collection and Ingestion",
+    "tier": 1,
+    "purpose": "Circuit rotation, SOCKS5h",
+    "implementation": "mock-only",
+    "operational": false
+  },
+  {
+    "id": "crawler-scheduler",
+    "plane": 2,
+    "plane_name": "### Plane 2 \u2014 Collection and Ingestion",
+    "tier": 1,
+    "purpose": "Celery + Redis priority queue",
+    "implementation": "mock-only",
+    "operational": false
+  },
+  {
+    "id": "onion-crawler",
+    "plane": 2,
+    "plane_name": "### Plane 2 \u2014 Collection and Ingestion",
+    "tier": 1,
+    "purpose": "Scrapy stealth crawler",
+    "implementation": "mock-only",
+    "operational": false
+  },
+  {
+    "id": "forum-crawler",
+    "plane": 2,
+    "plane_name": "### Plane 2 \u2014 Collection and Ingestion",
+    "tier": 1,
+    "purpose": "XenForo/IPB/MyBB parser",
+    "implementation": "mock-only",
+    "operational": false
+  },
+  {
+    "id": "marketplace-crawler",
+    "plane": 2,
+    "plane_name": "### Plane 2 \u2014 Collection and Ingestion",
+    "tier": 1,
+    "purpose": "Marketplace-specific adapters",
+    "implementation": "mock-only",
+    "operational": false
+  },
+  {
+    "id": "i2p-collector",
+    "plane": 2,
+    "plane_name": "### Plane 2 \u2014 Collection and Ingestion",
+    "tier": 3,
+    "purpose": "I2P network ingestion",
+    "implementation": "mock-only",
+    "operational": false
+  },
+  {
+    "id": "zeronet-collector",
+    "plane": 2,
+    "plane_name": "### Plane 2 \u2014 Collection and Ingestion",
+    "tier": 3,
+    "purpose": "ZeroNet / ZeroNetX",
+    "implementation": "mock-only",
+    "operational": false
+  },
+  {
+    "id": "telegram-osint",
+    "plane": 2,
+    "plane_name": "### Plane 2 \u2014 Collection and Ingestion",
+    "tier": 3,
+    "purpose": "Public channel monitoring",
+    "implementation": "mock-only",
+    "operational": false
+  },
+  {
+    "id": "discord-osint",
+    "plane": 2,
+    "plane_name": "### Plane 2 \u2014 Collection and Ingestion",
+    "tier": 3,
+    "purpose": "Guild/channel monitoring",
+    "implementation": "mock-only",
+    "operational": false
+  },
+  {
+    "id": "matrix-osint",
+    "plane": 2,
+    "plane_name": "### Plane 2 \u2014 Collection and Ingestion",
+    "tier": 3,
+    "purpose": "Element/Matrix rooms",
+    "implementation": "mock-only",
+    "operational": false
+  },
+  {
+    "id": "simplex-collector",
+    "plane": 2,
+    "plane_name": "### Plane 2 \u2014 Collection and Ingestion",
+    "tier": 4,
+    "purpose": "SimpleX metadata-free",
+    "implementation": "mock-only",
+    "operational": false
+  },
+  {
+    "id": "blockchain-nodes",
+    "plane": 2,
+    "plane_name": "### Plane 2 \u2014 Collection and Ingestion",
+    "tier": 1,
+    "purpose": "bitcoind, geth, XMR, ZEC, DASH",
+    "implementation": "mock-only",
+    "operational": false
+  },
+  {
+    "id": "clearnet-gateway",
+    "plane": 2,
+    "plane_name": "### Plane 2 \u2014 Collection and Ingestion",
+    "tier": 1,
+    "purpose": "Shodan/Censys local mirrors",
+    "implementation": "mock-only",
+    "operational": false
+  },
+  {
+    "id": "evidence-pipeline",
+    "plane": 2,
+    "plane_name": "### Plane 2 \u2014 Collection and Ingestion",
+    "tier": 1,
+    "purpose": "SHA-256 to Sign to Merkle to MinIO to Kafka",
+    "implementation": "mock-only",
+    "operational": false
+  },
+  {
+    "id": "misconfig-analyzer",
+    "plane": 3,
+    "plane_name": "### Plane 3 \u2014 Analytics and AI",
+    "tier": 2,
+    "purpose": ".onion misconfiguration detection",
+    "implementation": "mock-only",
+    "operational": false
+  },
+  {
+    "id": "clearnet-correlator",
+    "plane": 3,
+    "plane_name": "### Plane 3 \u2014 Analytics and AI",
+    "tier": 2,
+    "purpose": "Favicon/SSL/ETag matching",
+    "implementation": "mock-only",
+    "operational": false
+  },
+  {
+    "id": "blockchain-clusterer",
+    "plane": 3,
+    "plane_name": "### Plane 3 \u2014 Analytics and AI",
+    "tier": 2,
+    "purpose": "Heuristic wallet clustering",
+    "implementation": "mock-only",
+    "operational": false
+  },
+  {
+    "id": "privacy-coin-analyzer",
+    "plane": 3,
+    "plane_name": "### Plane 3 \u2014 Analytics and AI",
+    "tier": 4,
+    "purpose": "XMR/ZEC/DASH de-anonymization",
+    "implementation": "mock-only",
+    "operational": false
+  },
+  {
+    "id": "vasp-attributor",
+    "plane": 3,
+    "plane_name": "### Plane 3 \u2014 Analytics and AI",
+    "tier": 2,
+    "purpose": "KYC-traceable endpoint flagging",
+    "implementation": "mock-only",
+    "operational": false
+  },
+  {
+    "id": "stylometry-engine",
+    "plane": 3,
+    "plane_name": "### Plane 3 \u2014 Analytics and AI",
+    "tier": 3,
+    "purpose": "Cross-lingual authorship attribution",
+    "implementation": "mock-only",
+    "operational": false
+  },
+  {
+    "id": "multilingual-nlp",
+    "plane": 3,
+    "plane_name": "### Plane 3 \u2014 Analytics and AI",
+    "tier": 3,
+    "purpose": "NLLB-200 offline translation, lang detection",
+    "implementation": "mock-only",
+    "operational": false
+  },
+  {
+    "id": "behavioral-profiler",
+    "plane": 3,
+    "plane_name": "### Plane 3 \u2014 Analytics and AI",
+    "tier": 3,
+    "purpose": "Time-zone, anomaly detection",
+    "implementation": "mock-only",
+    "operational": false
+  },
+  {
+    "id": "cognitive-fingerprint",
+    "plane": 3,
+    "plane_name": "### Plane 3 \u2014 Analytics and AI",
+    "tier": 4,
+    "purpose": "Content-blind attribution",
+    "implementation": "mock-only",
+    "operational": false
+  },
+  {
+    "id": "adversarial-defense",
+    "plane": 3,
+    "plane_name": "### Plane 3 \u2014 Analytics and AI",
+    "tier": 4,
+    "purpose": "LLM/GAN text detection",
+    "implementation": "mock-only",
+    "operational": false
+  },
+  {
+    "id": "malware-sandbox",
+    "plane": 3,
+    "plane_name": "### Plane 3 \u2014 Analytics and AI",
+    "tier": 4,
+    "purpose": "Static + dynamic malware analysis",
+    "implementation": "mock-only",
+    "operational": false
+  },
+  {
+    "id": "image-forensics",
+    "plane": 3,
+    "plane_name": "### Plane 3 \u2014 Analytics and AI",
+    "tier": 4,
+    "purpose": "EXIF, PRNU, geolocation",
+    "implementation": "mock-only",
+    "operational": false
+  },
+  {
+    "id": "deepfake-detector",
+    "plane": 3,
+    "plane_name": "### Plane 3 \u2014 Analytics and AI",
+    "tier": 4,
+    "purpose": "Synthetic media detection",
+    "implementation": "mock-only",
+    "operational": false
+  },
+  {
+    "id": "evidence-anchor",
+    "plane": 3,
+    "plane_name": "### Plane 3 \u2014 Analytics and AI",
+    "tier": 3,
+    "purpose": "Merkle tree construction",
+    "implementation": "mock-only",
+    "operational": false
+  },
+  {
+    "id": "synthetic-media-analyzer",
+    "plane": 3,
+    "plane_name": "### Plane 3 \u2014 Analytics and AI",
+    "tier": 4,
+    "purpose": "Voice, video deepfake detection",
+    "implementation": "mock-only",
+    "operational": false
+  },
+  {
+    "id": "language-detector",
+    "plane": 3,
+    "plane_name": "### Plane 3 \u2014 Analytics and AI",
+    "tier": 3,
+    "purpose": "fastText + CLD3",
+    "implementation": "mock-only",
+    "operational": false
+  },
+  {
+    "id": "transliteration-normalizer",
+    "plane": 3,
+    "plane_name": "### Plane 3 \u2014 Analytics and AI",
+    "tier": 3,
+    "purpose": "Cyrillic/Arabic to Latin",
+    "implementation": "mock-only",
+    "operational": false
+  },
+  {
+    "id": "yara-generator",
+    "plane": 3,
+    "plane_name": "### Plane 3 \u2014 Analytics and AI",
+    "tier": 4,
+    "purpose": "Auto-generate YARA rules from samples",
+    "implementation": "mock-only",
+    "operational": false
+  },
+  {
+    "id": "unified-graph",
+    "plane": 4,
+    "plane_name": "### Plane 4 \u2014 Intelligence Fusion",
+    "tier": 2,
+    "purpose": "Neo4j 5 Enterprise",
+    "implementation": "mock-only",
+    "operational": false
+  },
+  {
+    "id": "entity-resolver",
+    "plane": 4,
+    "plane_name": "### Plane 4 \u2014 Intelligence Fusion",
+    "tier": 2,
+    "purpose": "Louvain + PageRank",
+    "implementation": "mock-only",
+    "operational": false
+  },
+  {
+    "id": "confidence-scorer",
+    "plane": 4,
+    "plane_name": "### Plane 4 \u2014 Intelligence Fusion",
+    "tier": 3,
+    "purpose": "Bayesian log-odds fusion",
+    "implementation": "mock-only",
+    "operational": false
+  },
+  {
+    "id": "gnn-deanon",
+    "plane": 4,
+    "plane_name": "### Plane 4 \u2014 Intelligence Fusion",
+    "tier": 4,
+    "purpose": "GraphSAGE link prediction",
+    "implementation": "mock-only",
+    "operational": false
+  },
+  {
+    "id": "autonomous-agent",
+    "plane": 4,
+    "plane_name": "### Plane 4 \u2014 Intelligence Fusion",
+    "tier": 4,
+    "purpose": "Llama-3 13B RAG + tools",
+    "implementation": "mock-only",
+    "operational": false
+  },
+  {
+    "id": "zkp-query-layer",
+    "plane": 4,
+    "plane_name": "### Plane 4 \u2014 Intelligence Fusion",
+    "tier": 4,
+    "purpose": "zk-STARK analyst queries",
+    "implementation": "mock-only",
+    "operational": false
+  },
+  {
+    "id": "temporal-reasoner",
+    "plane": 4,
+    "plane_name": "### Plane 4 \u2014 Intelligence Fusion",
+    "tier": 3,
+    "purpose": "Time-travel queries, lifecycle",
+    "implementation": "mock-only",
+    "operational": false
+  },
+  {
+    "id": "source-reliability",
+    "plane": 4,
+    "plane_name": "### Plane 4 \u2014 Intelligence Fusion",
+    "tier": 3,
+    "purpose": "Admiralty Code (A\u2013F, 1\u20136)",
+    "implementation": "mock-only",
+    "operational": false
+  },
+  {
+    "id": "model-drift-monitor",
+    "plane": 4,
+    "plane_name": "### Plane 4 \u2014 Intelligence Fusion",
+    "tier": 3,
+    "purpose": "Accuracy monitoring, retrain triggers",
+    "implementation": "mock-only",
+    "operational": false
+  },
+  {
+    "id": "explainability-engine",
+    "plane": 4,
+    "plane_name": "### Plane 4 \u2014 Intelligence Fusion",
+    "tier": 4,
+    "purpose": "SHAP/LIME + graph path explanations",
+    "implementation": "mock-only",
+    "operational": false
+  },
+  {
+    "id": "legal-admissibility",
+    "plane": 5,
+    "plane_name": "### Plane 5 \u2014 Legal and Compliance",
+    "tier": 4,
+    "purpose": "Section 65B certificate generation",
+    "implementation": "mock-only",
+    "operational": false
+  },
+  {
+    "id": "legal-intercept",
+    "plane": 5,
+    "plane_name": "### Plane 5 \u2014 Legal and Compliance",
+    "tier": 4,
+    "purpose": "Lawful interception workflow",
+    "implementation": "mock-only",
+    "operational": false
+  },
+  {
+    "id": "judicial-oversight",
+    "plane": 5,
+    "plane_name": "### Plane 5 \u2014 Legal and Compliance",
+    "tier": 4,
+    "purpose": "Judge + committee access interface",
+    "implementation": "mock-only",
+    "operational": false
+  },
+  {
+    "id": "data-retention",
+    "plane": 5,
+    "plane_name": "### Plane 5 \u2014 Legal and Compliance",
+    "tier": 3,
+    "purpose": "DPDPA automated aging + deletion",
+    "implementation": "mock-only",
+    "operational": false
+  },
+  {
+    "id": "classification-handler",
+    "plane": 5,
+    "plane_name": "### Plane 5 \u2014 Legal and Compliance",
+    "tier": 3,
+    "purpose": "Auto-marking + downgrade workflow",
+    "implementation": "mock-only",
+    "operational": false
+  },
+  {
+    "id": "court-exhibit-packager",
+    "plane": 5,
+    "plane_name": "### Plane 5 \u2014 Legal and Compliance",
+    "tier": 4,
+    "purpose": "Sealed, tamper-evident court exhibit",
+    "implementation": "mock-only",
+    "operational": false
+  },
+  {
+    "id": "dpia-engine",
+    "plane": 5,
+    "plane_name": "### Plane 5 \u2014 Legal and Compliance",
+    "tier": 3,
+    "purpose": "Data Protection Impact Assessment",
+    "implementation": "mock-only",
+    "operational": false
+  },
+  {
+    "id": "oversight-audit-log",
+    "plane": 5,
+    "plane_name": "### Plane 5 \u2014 Legal and Compliance",
+    "tier": 4,
+    "purpose": "Separate from system audit \u2014 for judiciary",
+    "implementation": "mock-only",
+    "operational": false
+  },
+  {
+    "id": "mlat-coordinator",
+    "plane": 5,
+    "plane_name": "### Plane 5 \u2014 Legal and Compliance",
+    "tier": 4,
+    "purpose": "Mutual Legal Assistance Treaty workflow",
+    "implementation": "mock-only",
+    "operational": false
+  },
+  {
+    "id": "case-manager",
+    "plane": 6,
+    "plane_name": "### Plane 6 \u2014 Case and Operations",
+    "tier": 2,
+    "purpose": "Case lifecycle, assignments",
+    "implementation": "mock-only",
+    "operational": false
+  },
+  {
+    "id": "pir-tracker",
+    "plane": 6,
+    "plane_name": "### Plane 6 \u2014 Case and Operations",
+    "tier": 3,
+    "purpose": "Priority Intelligence Requirements",
+    "implementation": "mock-only",
+    "operational": false
+  },
+  {
+    "id": "peer-review",
+    "plane": 6,
+    "plane_name": "### Plane 6 \u2014 Case and Operations",
+    "tier": 3,
+    "purpose": "Mandatory HIGH-confidence review",
+    "implementation": "mock-only",
+    "operational": false
+  },
+  {
+    "id": "bias-mitigation",
+    "plane": 6,
+    "plane_name": "### Plane 6 \u2014 Case and Operations",
+    "tier": 4,
+    "purpose": "Devil's advocate, blind re-analysis",
+    "implementation": "mock-only",
+    "operational": false
+  },
+  {
+    "id": "analyst-wellness",
+    "plane": 6,
+    "plane_name": "### Plane 6 \u2014 Case and Operations",
+    "tier": 3,
+    "purpose": "Exposure tracking, rotation, counseling",
+    "implementation": "mock-only",
+    "operational": false
+  },
+  {
+    "id": "insider-threat",
+    "plane": 6,
+    "plane_name": "### Plane 6 \u2014 Case and Operations",
+    "tier": 4,
+    "purpose": "Behavioral analytics, honeytokens",
+    "implementation": "mock-only",
+    "operational": false
+  },
+  {
+    "id": "humint-manager",
+    "plane": 6,
+    "plane_name": "### Plane 6 \u2014 Case and Operations",
+    "tier": 4,
+    "purpose": "Covert persona lifecycle",
+    "implementation": "mock-only",
+    "operational": false
+  },
+  {
+    "id": "takedown-coordinator",
+    "plane": 6,
+    "plane_name": "### Plane 6 \u2014 Case and Operations",
+    "tier": 3,
+    "purpose": "LE coordination, seizure warrants",
+    "implementation": "mock-only",
+    "operational": false
+  },
+  {
+    "id": "analyst-api",
+    "plane": 7,
+    "plane_name": "### Plane 7 \u2014 Presentation and Dissemination",
+    "tier": 1,
+    "purpose": "FastAPI RBAC + MFA + JWT",
+    "implementation": "mock-only",
+    "operational": false
+  },
+  {
+    "id": "analyst-dashboard",
+    "plane": 7,
+    "plane_name": "### Plane 7 \u2014 Presentation and Dissemination",
+    "tier": 1,
+    "purpose": "React + TypeScript",
+    "implementation": "mock-only",
+    "operational": false
+  },
+  {
+    "id": "graph-visualization",
+    "plane": 7,
+    "plane_name": "### Plane 7 \u2014 Presentation and Dissemination",
+    "tier": 2,
+    "purpose": "Cytoscape.js + D3.js",
+    "implementation": "mock-only",
+    "operational": false
+  },
+  {
+    "id": "report-generator",
+    "plane": 7,
+    "plane_name": "### Plane 7 \u2014 Presentation and Dissemination",
+    "tier": 3,
+    "purpose": "PDF, CSV, JSON, GraphML",
+    "implementation": "mock-only",
+    "operational": false
+  },
+  {
+    "id": "admin-console",
+    "plane": 7,
+    "plane_name": "### Plane 7 \u2014 Presentation and Dissemination",
+    "tier": 1,
+    "purpose": "User + role management",
+    "implementation": "mock-only",
+    "operational": false
+  },
+  {
+    "id": "inter-agency-gateway",
+    "plane": 7,
+    "plane_name": "### Plane 7 \u2014 Presentation and Dissemination",
+    "tier": 4,
+    "purpose": "IB/RAW/CBI/NIA secure sharing",
+    "implementation": "mock-only",
+    "operational": false
+  },
+  {
+    "id": "field-alerting",
+    "plane": 7,
+    "plane_name": "### Plane 7 \u2014 Presentation and Dissemination",
+    "tier": 3,
+    "purpose": "Encrypted push to field officers",
+    "implementation": "mock-only",
+    "operational": false
+  }
+]

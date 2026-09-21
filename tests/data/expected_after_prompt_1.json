@@ -1,0 +1,20 @@
+{
+  "mode": "synthetic-fixtures-only",
+  "evidence_rows": 25,
+  "users": 4,
+  "minio_objects": 25,
+  "graph_nodes": 22,
+  "graph_edges": 20,
+  "pending_outbox": 0,
+  "audit_log_chain_valid": true,
+  "kafka_messages": {
+    "crawl.raw": 26,
+    "content.clean": 25,
+    "scan.raw": 10,
+    "chain.tx": 20,
+    "audit.events": 0,
+    "service.errors": 1,
+    "dlq.crawl.raw": 1
+  },
+  "verified_at": "2026-09-20T13:11:00.370895+00:00"
+}

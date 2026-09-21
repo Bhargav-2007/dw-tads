@@ -1,0 +1,17 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><title>Public threat intelligence</title>
+<style>body{font:16px system-ui;background:#101923;color:#e5eef6;max-width:1200px;margin:40px auto;padding:24px}input,select,button{font:inherit;padding:10px;margin:6px 4px;background:#213345;color:white;border:1px solid #5c7489;border-radius:6px}button{cursor:pointer;background:#255d8c}a{color:#8ed2ff}pre{white-space:pre-wrap;background:#192938;padding:20px}td,th{text-align:left;padding:10px;border-bottom:1px solid #344658}table{width:100%;border-collapse:collapse}small{color:#bbd0df}</style></head>
+<body><small>DW-TADS · PUBLIC TECHNICAL INTELLIGENCE</small><h1>Vulnerabilities, malware, and techniques</h1><p>Live public data from CISA KEV and MITRE ATT&CK. Source evidence is retained and hash-verified.</p>
+<label>Access token <input id="token" type="password" autocomplete="off" placeholder="Paste your reader token"></label><button id="connect">Connect</button><a href="/docs">API documentation</a>
+<pre id="status">Connect to view feed freshness and processing status. The token stays in page memory.</pre>
+<label>Search <input id="query" placeholder="CVE, product, malware name"></label><select id="kind"><option value="">All types</option><option>vulnerability</option><option>malware</option><option>technique</option></select><button id="search">Search</button>
+<button data-format="csv">Export CSV</button><button data-format="json">Export JSON</button><button data-format="html">Export report</button><p id="total"></p><table><thead><tr><th>ID</th><th>Type</th><th>Title</th><th>Source date</th></tr></thead><tbody id="rows"></tbody></table>
+<p><small>© 2026 The MITRE Corporation. This work is reproduced and distributed with the permission of The MITRE Corporation. CISA KEV data: CC0. <a href="/licenses/mitre">MITRE license and disclaimer</a>. Source dates describe advisory addition or record modification, not incident times.</small></p>
+<script>
+const el=id=>document.getElementById(id);
+async function api(path){const r=await fetch(path,{headers:{Authorization:'Bearer '+el('token').value}});if(!r.ok)throw Error('Request failed: '+r.status+' '+await r.text());return r;}
+function params(){const p=new URLSearchParams({q:el('query').value,limit:'100'});if(el('kind').value)p.set('kind',el('kind').value);return p;}
+async function search(){try{const d=await(await api('/records?'+params())).json();el('total').textContent='Showing '+d.results.length+' of '+d.total+' records.';el('rows').replaceChildren();for(const r of d.results){const tr=document.createElement('tr');for(const v of [r.external_id,r.kind,r.title,r.published_at]){const td=document.createElement('td');td.textContent=v;tr.append(td);}el('rows').append(tr);}}catch(e){el('total').textContent=e.message;}}
+el('connect').onclick=async()=>{try{const s=await(await api('/status')).json();el('status').textContent=JSON.stringify(s,null,2);await search();}catch(e){el('status').textContent=e.message;}};
+el('search').onclick=search;
+for(const b of document.querySelectorAll('[data-format]'))b.onclick=async()=>{try{const p=params();p.set('limit','1000');p.set('format',b.dataset.format);const r=await api('/export?'+p);const u=URL.createObjectURL(await r.blob());const a=document.createElement('a');a.href=u;a.download='threat-intelligence.'+b.dataset.format;a.click();setTimeout(()=>URL.revokeObjectURL(u),1000);}catch(e){el('total').textContent=e.message;}};
+</script></body></html>

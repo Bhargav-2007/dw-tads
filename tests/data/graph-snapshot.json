@@ -1,0 +1,493 @@
+{
+  "synthetic": true,
+  "nodes": [
+    {
+      "id": "198.51.100.22",
+      "type": "ClearnetIP",
+      "properties": {
+        "provenance": "synthetic fixture; not inferred",
+        "ip_address": "198.51.100.22",
+        "synthetic": true,
+        "hosting_provider": "ExampleHost",
+        "demo_id": "198.51.100.22",
+        "recorded_at": "2025-04-20T00:00:00Z"
+      }
+    },
+    {
+      "id": "1A2B3C4D5E6F7G8H9I0J1K2L3M4N5O6P7Q",
+      "type": "Wallet",
+      "properties": {
+        "provenance": "synthetic fixture; not inferred",
+        "address": "1A2B3C4D5E6F7G8H9I0J1K2L3M4N5O6P7Q",
+        "synthetic": true,
+        "demo_id": "1A2B3C4D5E6F7G8H9I0J1K2L3M4N5O6P7Q",
+        "recorded_at": "2025-04-20T00:00:00Z",
+        "currency": "BTC"
+      }
+    },
+    {
+      "id": "203.0.113.45",
+      "type": "ClearnetIP",
+      "properties": {
+        "provenance": "synthetic fixture; not inferred",
+        "ip_address": "203.0.113.45",
+        "synthetic": true,
+        "hosting_provider": "ExampleHost",
+        "demo_id": "203.0.113.45",
+        "recorded_at": "2025-04-20T00:00:00Z"
+      }
+    },
+    {
+      "id": "3J98t1WpEZ73CNmQviecrnyiWrnqRhWNLy",
+      "type": "Wallet",
+      "properties": {
+        "provenance": "synthetic fixture; not inferred",
+        "address": "3J98t1WpEZ73CNmQviecrnyiWrnqRhWNLy",
+        "synthetic": true,
+        "demo_id": "3J98t1WpEZ73CNmQviecrnyiWrnqRhWNLy",
+        "recorded_at": "2025-04-20T00:00:00Z",
+        "currency": "BTC"
+      }
+    },
+    {
+      "id": "4A2B8C9D1E2F3A4B5C6D7E8F9A0B1C2D3E4F5A6B",
+      "type": "PGPKey",
+      "properties": {
+        "provenance": "synthetic fixture; not inferred",
+        "fingerprint": "4A2B8C9D1E2F3A4B5C6D7E8F9A0B1C2D3E4F5A6B",
+        "synthetic": true,
+        "demo_id": "4A2B8C9D1E2F3A4B5C6D7E8F9A0B1C2D3E4F5A6B",
+        "recorded_at": "2025-04-20T00:00:00Z",
+        "algorithm": "RSA-4096"
+      }
+    },
+    {
+      "id": "actor:alpha_actor",
+      "type": "Actor",
+      "properties": {
+        "source_confidence": "B",
+        "provenance": "synthetic fixture; not inferred",
+        "actor_id": "actor:alpha_actor",
+        "category": [
+          "hacking_services"
+        ],
+        "synthetic": true,
+        "risk_score": 0.65,
+        "demo_id": "actor:alpha_actor",
+        "recorded_at": "2025-04-20T00:00:00Z"
+      }
+    },
+    {
+      "id": "actor:broker_v2",
+      "type": "Actor",
+      "properties": {
+        "source_confidence": "A",
+        "provenance": "synthetic fixture; not inferred",
+        "actor_id": "actor:broker_v2",
+        "category": [
+          "stolen_data"
+        ],
+        "synthetic": true,
+        "risk_score": 0.75,
+        "demo_id": "actor:broker_v2",
+        "recorded_at": "2025-04-20T00:00:00Z"
+      }
+    },
+    {
+      "id": "actor:carder_king",
+      "type": "Actor",
+      "properties": {
+        "source_confidence": "B",
+        "provenance": "synthetic fixture; not inferred",
+        "actor_id": "actor:carder_king",
+        "category": [
+          "carding"
+        ],
+        "synthetic": true,
+        "risk_score": 0.78,
+        "demo_id": "actor:carder_king",
+        "recorded_at": "2025-04-20T00:00:00Z"
+      }
+    },
+    {
+      "id": "actor:gamma_actor",
+      "type": "Actor",
+      "properties": {
+        "source_confidence": "B",
+        "provenance": "synthetic fixture; not inferred",
+        "actor_id": "actor:gamma_actor",
+        "category": [
+          "drugs"
+        ],
+        "synthetic": true,
+        "risk_score": 0.6,
+        "demo_id": "actor:gamma_actor",
+        "recorded_at": "2025-04-20T00:00:00Z"
+      }
+    },
+    {
+      "id": "actor:shadow_broker",
+      "type": "Actor",
+      "properties": {
+        "source_confidence": "A",
+        "provenance": "synthetic fixture; not inferred",
+        "actor_id": "actor:shadow_broker",
+        "category": [
+          "stolen_data",
+          "ransomware",
+          "zero_day"
+        ],
+        "synthetic": true,
+        "risk_score": 0.92,
+        "demo_id": "actor:shadow_broker",
+        "recorded_at": "2025-04-20T00:00:00Z"
+      }
+    },
+    {
+      "id": "actor_alpha",
+      "type": "Handle",
+      "properties": {
+        "provenance": "synthetic fixture; not inferred",
+        "platform": "BreachForums",
+        "synthetic": true,
+        "demo_id": "actor_alpha",
+        "recorded_at": "2025-04-20T00:00:00Z",
+        "handle_id": "actor_alpha"
+      }
+    },
+    {
+      "id": "actor_beta",
+      "type": "Handle",
+      "properties": {
+        "provenance": "synthetic fixture; not inferred",
+        "platform": "RAMP",
+        "synthetic": true,
+        "demo_id": "actor_beta",
+        "recorded_at": "2025-04-20T00:00:00Z",
+        "handle_id": "actor_beta"
+      }
+    },
+    {
+      "id": "bc1qxy2kgdygjrsqtzq2n0yrf2493p83kkfjhx0wlh",
+      "type": "Wallet",
+      "properties": {
+        "provenance": "synthetic fixture; not inferred",
+        "address": "bc1qxy2kgdygjrsqtzq2n0yrf2493p83kkfjhx0wlh",
+        "synthetic": true,
+        "demo_id": "bc1qxy2kgdygjrsqtzq2n0yrf2493p83kkfjhx0wlh",
+        "recorded_at": "2025-04-20T00:00:00Z",
+        "currency": "BTC"
+      }
+    },
+    {
+      "id": "broker_v2",
+      "type": "Handle",
+      "properties": {
+        "provenance": "synthetic fixture; not inferred",
+        "platform": "BreachForums",
+        "synthetic": true,
+        "demo_id": "broker_v2",
+        "recorded_at": "2025-04-20T00:00:00Z",
+        "handle_id": "broker_v2"
+      }
+    },
+    {
+      "id": "carder_king",
+      "type": "Handle",
+      "properties": {
+        "provenance": "synthetic fixture; not inferred",
+        "platform": "BreachForums",
+        "synthetic": true,
+        "demo_id": "carder_king",
+        "recorded_at": "2025-04-20T00:00:00Z",
+        "handle_id": "carder_king"
+      }
+    },
+    {
+      "id": "cc_master",
+      "type": "Handle",
+      "properties": {
+        "provenance": "synthetic fixture; not inferred",
+        "platform": "BreachForums",
+        "synthetic": true,
+        "demo_id": "cc_master",
+        "recorded_at": "2025-04-20T00:00:00Z",
+        "handle_id": "cc_master"
+      }
+    },
+    {
+      "id": "cve_dealer_x",
+      "type": "Handle",
+      "properties": {
+        "provenance": "synthetic fixture; not inferred",
+        "platform": "XSS.is",
+        "synthetic": true,
+        "demo_id": "cve_dealer_x",
+        "recorded_at": "2025-04-20T00:00:00Z",
+        "handle_id": "cve_dealer_x"
+      }
+    },
+    {
+      "id": "gamma_actor",
+      "type": "Handle",
+      "properties": {
+        "provenance": "synthetic fixture; not inferred",
+        "platform": "BreachForums",
+        "synthetic": true,
+        "demo_id": "gamma_actor",
+        "recorded_at": "2025-04-20T00:00:00Z",
+        "handle_id": "gamma_actor"
+      }
+    },
+    {
+      "id": "privatedump5678.onion",
+      "type": "OnionService",
+      "properties": {
+        "provenance": "synthetic fixture; not inferred",
+        "service_type": "leak_site",
+        "synthetic": true,
+        "onion_address": "privatedump5678.onion",
+        "demo_id": "privatedump5678.onion",
+        "recorded_at": "2025-04-20T00:00:00Z"
+      }
+    },
+    {
+      "id": "shadow_broker",
+      "type": "Handle",
+      "properties": {
+        "provenance": "synthetic fixture; not inferred",
+        "platform": "BreachForums",
+        "synthetic": true,
+        "demo_id": "shadow_broker",
+        "recorded_at": "2025-04-20T00:00:00Z",
+        "handle_id": "shadow_broker"
+      }
+    },
+    {
+      "id": "shadowmarket1234.onion",
+      "type": "OnionService",
+      "properties": {
+        "provenance": "synthetic fixture; not inferred",
+        "service_type": "marketplace",
+        "synthetic": true,
+        "onion_address": "shadowmarket1234.onion",
+        "demo_id": "shadowmarket1234.onion",
+        "recorded_at": "2025-04-20T00:00:00Z"
+      }
+    },
+    {
+      "id": "zer0day_hunter",
+      "type": "Handle",
+      "properties": {
+        "provenance": "synthetic fixture; not inferred",
+        "platform": "Exploit.in",
+        "synthetic": true,
+        "demo_id": "zer0day_hunter",
+        "recorded_at": "2025-04-20T00:00:00Z",
+        "handle_id": "zer0day_hunter"
+      }
+    }
+  ],
+  "edges": [
+    {
+      "source": "actor:shadow_broker",
+      "target": "shadow_broker",
+      "type": "HasHandle",
+      "properties": {
+        "provenance": "fixture assertion; not calibrated",
+        "synthetic": true,
+        "confidence": 0.95
+      }
+    },
+    {
+      "source": "actor:shadow_broker",
+      "target": "zer0day_hunter",
+      "type": "HasHandle",
+      "properties": {
+        "provenance": "fixture assertion; not calibrated",
+        "synthetic": true,
+        "confidence": 0.94
+      }
+    },
+    {
+      "source": "actor:shadow_broker",
+      "target": "cve_dealer_x",
+      "type": "HasHandle",
+      "properties": {
+        "provenance": "fixture assertion; not calibrated",
+        "synthetic": true,
+        "confidence": 0.92
+      }
+    },
+    {
+      "source": "actor:carder_king",
+      "target": "carder_king",
+      "type": "HasHandle",
+      "properties": {
+        "provenance": "fixture assertion; not calibrated",
+        "synthetic": true,
+        "confidence": 0.98
+      }
+    },
+    {
+      "source": "actor:carder_king",
+      "target": "cc_master",
+      "type": "HasHandle",
+      "properties": {
+        "provenance": "fixture assertion; not calibrated",
+        "synthetic": true,
+        "confidence": 0.91
+      }
+    },
+    {
+      "source": "actor:broker_v2",
+      "target": "broker_v2",
+      "type": "HasHandle",
+      "properties": {
+        "provenance": "fixture assertion; not calibrated",
+        "synthetic": true,
+        "confidence": 0.99
+      }
+    },
+    {
+      "source": "actor:alpha_actor",
+      "target": "actor_alpha",
+      "type": "HasHandle",
+      "properties": {
+        "provenance": "fixture assertion; not calibrated",
+        "synthetic": true,
+        "confidence": 0.95
+      }
+    },
+    {
+      "source": "actor:alpha_actor",
+      "target": "actor_beta",
+      "type": "HasHandle",
+      "properties": {
+        "provenance": "fixture assertion; not calibrated",
+        "synthetic": true,
+        "confidence": 0.94
+      }
+    },
+    {
+      "source": "actor:gamma_actor",
+      "target": "gamma_actor",
+      "type": "HasHandle",
+      "properties": {
+        "provenance": "fixture assertion; not calibrated",
+        "synthetic": true,
+        "confidence": 0.97
+      }
+    },
+    {
+      "source": "shadow_broker",
+      "target": "zer0day_hunter",
+      "type": "StylometricMatch",
+      "properties": {
+        "provenance": "fixture assertion; not calibrated",
+        "synthetic": true,
+        "confidence": 0.94
+      }
+    },
+    {
+      "source": "shadow_broker",
+      "target": "cve_dealer_x",
+      "type": "StylometricMatch",
+      "properties": {
+        "provenance": "fixture assertion; not calibrated",
+        "synthetic": true,
+        "confidence": 0.92
+      }
+    },
+    {
+      "source": "actor_alpha",
+      "target": "actor_beta",
+      "type": "StylometricMatch",
+      "properties": {
+        "provenance": "fixture assertion; not calibrated",
+        "synthetic": true,
+        "confidence": 0.94
+      }
+    },
+    {
+      "source": "shadow_broker",
+      "target": "carder_king",
+      "type": "Trusts",
+      "properties": {
+        "provenance": "fixture assertion; not calibrated",
+        "synthetic": true,
+        "confidence": 0.85
+      }
+    },
+    {
+      "source": "actor_alpha",
+      "target": "carder_king",
+      "type": "Trusts",
+      "properties": {
+        "provenance": "fixture assertion; not calibrated",
+        "synthetic": true,
+        "confidence": 0.75
+      }
+    },
+    {
+      "source": "shadow_broker",
+      "target": "1A2B3C4D5E6F7G8H9I0J1K2L3M4N5O6P7Q",
+      "type": "ControlsWallet",
+      "properties": {
+        "provenance": "fixture assertion; not calibrated",
+        "synthetic": true,
+        "confidence": 0.9
+      }
+    },
+    {
+      "source": "carder_king",
+      "target": "bc1qxy2kgdygjrsqtzq2n0yrf2493p83kkfjhx0wlh",
+      "type": "ControlsWallet",
+      "properties": {
+        "provenance": "fixture assertion; not calibrated",
+        "synthetic": true,
+        "confidence": 0.85
+      }
+    },
+    {
+      "source": "actor_alpha",
+      "target": "3J98t1WpEZ73CNmQviecrnyiWrnqRhWNLy",
+      "type": "ControlsWallet",
+      "properties": {
+        "provenance": "fixture assertion; not calibrated",
+        "synthetic": true,
+        "confidence": 0.8
+      }
+    },
+    {
+      "source": "shadow_broker",
+      "target": "4A2B8C9D1E2F3A4B5C6D7E8F9A0B1C2D3E4F5A6B",
+      "type": "UsesPGP",
+      "properties": {
+        "provenance": "fixture assertion; not calibrated",
+        "synthetic": true,
+        "confidence": 0.95
+      }
+    },
+    {
+      "source": "shadowmarket1234.onion",
+      "target": "203.0.113.45",
+      "type": "ResolvesTo",
+      "properties": {
+        "provenance": "fixture assertion; not calibrated",
+        "synthetic": true,
+        "confidence": 0.88
+      }
+    },
+    {
+      "source": "privatedump5678.onion",
+      "target": "198.51.100.22",
+      "type": "ResolvesTo",
+      "properties": {
+        "provenance": "fixture assertion; not calibrated",
+        "synthetic": true,
+        "confidence": 0.85
+      }
+    }
+  ]
+}

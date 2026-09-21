@@ -1,0 +1,32 @@
+{
+  "after_prompt_1": {
+    "evidence_rows": 20,
+    "minio_objects": 20,
+    "kafka_content_clean_messages": 20,
+    "audit_log_chain_valid": true
+  },
+  "after_prompt_2": {
+    "infra_indicators_messages": 5,
+    "persona_links_messages": 1,
+    "behavior_profile_messages": 2,
+    "required_link": {"handle_a": "actor_alpha", "handle_b": "actor_beta",
+                      "min_similarity": 0.85}
+  },
+  "after_prompt_3": {
+    "neo4j_actor_nodes": 5,
+    "neo4j_handle_nodes": 9,
+    "neo4j_wallet_nodes": 3,
+    "neo4j_onion_service_nodes": 2,
+    "attributed_edges_with_confidence_gt_0_85": 2
+  },
+  "after_prompt_4": {
+    "analyst_login_works": true,
+    "timeline_query_returns": 5,
+    "actor_profile_returns_handles": true,
+    "graph_query_returns_nodes": true,
+    "csv_export_works": true,
+    "json_export_works": true,
+    "pdf_export_works": true,
+    "audit_log_has_query_records": true
+  }
+}

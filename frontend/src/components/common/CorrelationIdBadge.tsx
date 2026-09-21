@@ -1,0 +1,1 @@
+export { CorrelationIdBadge } from "./index";
