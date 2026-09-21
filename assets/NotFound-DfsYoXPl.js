@@ -1,0 +1,1 @@
+import{j as t}from"./motion-DzSRPdQG.js";import{L as o}from"./react-Cp6UogC3.js";import{E as e}from"./index-BtJ4w0vK.js";import"./charts-UqEH7oVU.js";function m(){return t.jsx(e,{title:"Page not found",description:"This workspace page does not exist.",action:t.jsx(o,{to:"/timeline",children:"Return to timeline"})})}export{m as default};
